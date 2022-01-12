@@ -145,19 +145,6 @@ print(lista_H_string)
 
 lista_H_string = '$'.join(listaH)
 print(lista_H_string)
-"""
-
-type([])
-
-lista1 = [1, 55, 8, 95, 65, 4, 44, 21, 23, 54, 65, 88, 74, 65]
-
-#  O Python separa cada string separadamente:'G', 'e', 'e' 'k'...
-
-lista2 = list('Geek University')
-
-lista3 = []
-
-lista4 = list(range(11))
 
 #  Convertendo uma lista em string
 
@@ -174,8 +161,153 @@ print(lista_H_string)
 lista_H_string = '$'.join(listaH)
 print(lista_H_string)
 
+#  Iterando sobre listas
 
+#  Exemplo 1 - Utilizando for
 
+soma = 0
+for i in lista1:
+    print(i)
+    soma += i
+
+print(f'\nA soma total dos valores: {soma}')
+
+#  Exemplo 2 - Utilizando while
+
+carrinho = []
+produto = 's'
+
+while produto != 'sair':
+    print('Adicione um novo produto no carrinho ou digite "sair" para encerrar a compra:')
+    produto = input()
+    if produto != 'sair':
+        carrinho.append(produto)
+
+print('\nProdutos do carrinho:')
+
+for produto in carrinho:
+    print(produto)
+
+#  Utilizando variáveis em listas
+
+numeros = [1, 2, 3, 4, 5]
+print(numeros)
+
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+
+numeros = [num1, num2, num3, num4, num5]
+print(numeros)
+
+#  Fazemos acesso aos elementos de forma indexada
+
+#       [  0        1         2        3    ]
+cores = ['azul', 'branco', 'verde', 'amarelo']
+
+print(cores[0]) # azul
+print(cores[1]) # branco
+print(cores[2]) # verde
+print(cores[3]) # amarelo
+
+#  Podemos inverter indo do último para o primeiro também
+
+print(cores[-1]) # azul
+print(cores[-2]) # azul
+print(cores[-3]) # azul
+print(cores[-4]) # azul
+
+#  Gerar índice em um for
+
+for indice, cor in enumerate(cores):
+    print(indice, cor)
+
+#  Descobrir o número do índice de um elemento
+
+lista = [6, 7, 8, 6, 10]
+
+#  Qual o índice do elemento 8?
+print(lista.index(8))
+
+#  Qual o índice do elemento 10?
+print(lista.index(10))
+
+#  Caso o elemento não esteja na lista será voltado um erro: ValueError
+
+#  OBS: Retorno o índice do primeiro elemento encontrado (lista = [6, 7, 8, 6, 10])
+print(lista.index(6))
+
+#  Podemos fazer busca dentro de um range, ou seja, qual índice ele vai começar a buscar
+print(lista.index(10, 2))  # Buscando a partir do índice 2
+print(lista.index(10, 3))  # Buscando a partir do índice 3
+print(lista.index(10, 4))  # Buscando a partir do índice 4
+# print(lista.index(10, 5))  # Caso não tenha o elemento na lista aparecerá ValueError
+
+#  Podemos fazer uma busca dentro de um range, inicio/fim
+print(lista.index(7, 0, 3))  # Buscar o elemento 7 entre os índices 0 a 3#  Descobrir o número do índice de um elemento
+
+lista = [6, 7, 8, 6, 10]
+
+#  Qual o índice do elemento 8?
+print(lista.index(8))
+
+#  Qual o índice do elemento 10?
+print(lista.index(10))
+
+#  Caso o elemento não esteja na lista será voltado um erro: ValueError
+
+#  OBS: Retorno o índice do primeiro elemento encontrado (lista = [6, 7, 8, 6, 10])
+print(lista.index(6))
+
+#  Podemos fazer busca dentro de um range, ou seja, qual índice ele vai começar a buscar
+print(lista.index(10, 2))  # Buscando a partir do índice 2
+print(lista.index(10, 3))  # Buscando a partir do índice 3
+print(lista.index(10, 4))  # Buscando a partir do índice 4
+# print(lista.index(10, 5))  # Caso não tenha o elemento na lista aparecerá ValueError
+
+#  Podemos fazer uma busca dentro de um range, inicio/fim
+print(lista.index(7, 0, 3))  # Buscar o elemento 7 entre os índices 0 a 3
+"""
+
+type([])
+
+lista1 = [1, 55, 8, 95, 65, 4, 44, 21, 23, 54, 65, 88, 74, 65]
+
+#  O Python separa cada string separadamente:'G', 'e', 'e' 'k'...
+
+lista2 = list('Geek University')
+
+lista3 = []
+
+lista4 = list(range(11))
+
+#  Outros métodos nem tão importantes mas úteis
+
+#  Descobrir o número do índice de um elemento
+
+lista = [6, 7, 8, 6, 10]
+
+#  Qual o índice do elemento 8?
+print(lista.index(8))
+
+#  Qual o índice do elemento 10?
+print(lista.index(10))
+
+#  Caso o elemento não esteja na lista será voltado um erro: ValueError
+
+#  OBS: Retorno o índice do primeiro elemento encontrado (lista = [6, 7, 8, 6, 10])
+print(lista.index(6))
+
+#  Podemos fazer busca dentro de um range, ou seja, qual índice ele vai começar a buscar
+print(lista.index(10, 2))  # Buscando a partir do índice 2
+print(lista.index(10, 3))  # Buscando a partir do índice 3
+print(lista.index(10, 4))  # Buscando a partir do índice 4
+# print(lista.index(10, 5))  # Caso não tenha o elemento na lista aparecerá ValueError
+
+#  Podemos fazer uma busca dentro de um range, inicio/fim
+print(lista.index(7, 0, 3))  # Buscar o elemento 7 entre os índices 0 a 3
 
 
 
