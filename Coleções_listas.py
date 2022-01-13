@@ -224,6 +224,8 @@ print(cores[-4]) # azul
 for indice, cor in enumerate(cores):
     print(indice, cor)
 
+#  Outros métodos nem tão importantes mas úteis
+
 #  Descobrir o número do índice de um elemento
 
 lista = [6, 7, 8, 6, 10]
@@ -269,47 +271,132 @@ print(lista.index(10, 4))  # Buscando a partir do índice 4
 
 #  Podemos fazer uma busca dentro de um range, inicio/fim
 print(lista.index(7, 0, 3))  # Buscar o elemento 7 entre os índices 0 a 3
+
+#  Revisão de slicing
+
+# lista[inicio:fim:passo]
+# range(inicio:fim:passo)
+
+#  Trabalhando com slice de lista com parâmetro 'inicio'
+
+lista = [1, 2, 3, 4, 5, 6]
+
+print(lista[1:])  # Iniciando do índice 1 e pegando todos os elementos restantes
+
+#  Trabalhando com slide de lista com parâmetro 'fim'
+
+print(lista[:4])  # Iniciando do índice 0 e indo até o elemento do índice [2 - 1]; outra forma
+# de fazer: print(lista[0:2:]
+
+#  Trabalhando com slide de lista com parâmetro 'passo'
+
+print(lista[::2])  # Iniciando do índice 0 e indo de 2 em 2 (índice) até o final da lista
+
+#  Soma*, Valor Máximo*, Valor Mínimo*, Tamanho
+
+#  * Se os valores forem todos inteiros ou reais
+
+lista = [1, 4, 7, 8, 5, 2]
+
+print(sum(lista))   # Soma todos os elementos
+print(max(lista))   # Máximo valor (maior)
+print(min(lista))   # Mínimo valor (menor)
+print(len(lista))   # Tamanho da lista (quantidade de elementos)
+
+#  Copiando uma lista para outra (Shallow Copy, Deep Copy)
+
+#  Forma 1 - Deep Copy
+
+lista1 = [1, 4, 7, 4, 7, 8, 9]
+print(lista1)
+
+nova_lista = lista1.copy()
+print(nova_lista)
+
+nova_lista.append(8)
+
+print(lista1)
+print(nova_lista)
+
+#  Ao utilizar o .copy() copiamos uma lista para outra lista, mas elas ficaram totalmente
+#  independentes - isso em Python é chamado de Deepy Copy (cópia profunda)
+
+#  Forma 2 - Shallow Copy
+
+lista1 = [1, 4, 7, 4, 7, 8, 9]
+print(lista1)
+
+nova_lista = lista1
+print(nova_lista)
+
+nova_lista.append(8)
+
+print(lista1)
+print(nova_lista)
+
+outalista = nova_lista
+outalista.append(10)
+
+print(outalista)
+print(lista1)
+print(nova_lista)
+
+#  Ao utilizar uma cópia apenas por atribuição, a modificação em uma lista, acaba afetando todas as outras
+#  vinculadas a essa atribuição
+
+#  Devemos utilizar tuplas SEMPRE que não serão alterados os dados contidos em uma coleção
+
+meses = ('jan', 'fev', 'març', 'abril', 'maio', 'jun', 'jul', 'ago', 'sete', 'out', 'nov', 'dez')
+
+print(meses)
+
+#  O acesso a elementos de uma tupla também é semelhante a de uma lista
+
+print(meses[1])
+
+#  Iterando com while
+i = 0
+
+while i < len(meses):
+    print(meses[i])
+    i += 1
+
+#  Verificando em qual índice está um elemento da tupla:
+print(meses.index('març'))
+
+#  Slicing tupla[inicio:fim:passo}
+
+#  Exemplo 1:
+
+print(meses[4::])
+
+#  Devemos utilizar tuplas SEMPRE que não serão alterados os dados contidos em uma coleção
+
+#  Por que utilizar tuplas?
+
+#  - Tuplas são mais rápidas que listas
+#  - Tuplas deixam seu código mais seguro
+
+#  *Isso porque trabalhar com elementos imutáveis traz segurança para o código
+
+#  Copiando uma tupla para outra
+
+tupla = (1, 2, 3, 4)
+print(tupla)
+
+nova_tupla = tupla
+print(tupla)
+print(nova_tupla)
+
+outra = (5, 6, 7, 8)
+print(outra)
+
+nova_tupla += outra
+print(tupla)
+print(nova_tupla)
+
+#  Na tupla não temos o problema de shallow copy
 """
-
-type([])
-
-lista1 = [1, 55, 8, 95, 65, 4, 44, 21, 23, 54, 65, 88, 74, 65]
-
-#  O Python separa cada string separadamente:'G', 'e', 'e' 'k'...
-
-lista2 = list('Geek University')
-
-lista3 = []
-
-lista4 = list(range(11))
-
-#  Outros métodos nem tão importantes mas úteis
-
-#  Descobrir o número do índice de um elemento
-
-lista = [6, 7, 8, 6, 10]
-
-#  Qual o índice do elemento 8?
-print(lista.index(8))
-
-#  Qual o índice do elemento 10?
-print(lista.index(10))
-
-#  Caso o elemento não esteja na lista será voltado um erro: ValueError
-
-#  OBS: Retorno o índice do primeiro elemento encontrado (lista = [6, 7, 8, 6, 10])
-print(lista.index(6))
-
-#  Podemos fazer busca dentro de um range, ou seja, qual índice ele vai começar a buscar
-print(lista.index(10, 2))  # Buscando a partir do índice 2
-print(lista.index(10, 3))  # Buscando a partir do índice 3
-print(lista.index(10, 4))  # Buscando a partir do índice 4
-# print(lista.index(10, 5))  # Caso não tenha o elemento na lista aparecerá ValueError
-
-#  Podemos fazer uma busca dentro de um range, inicio/fim
-print(lista.index(7, 0, 3))  # Buscar o elemento 7 entre os índices 0 a 3
-
-
 
 
 
