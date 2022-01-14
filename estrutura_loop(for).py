@@ -73,12 +73,12 @@ for _ in range(1, qtd+1):
     for n in range(1, 10+1):
         print('\U0001F680' * n)
 
-"""
+
 
 num = 1
 
 while num < 10:
     print(num)
     num = num + 1
-
+"""
 
