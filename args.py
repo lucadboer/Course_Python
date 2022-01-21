@@ -17,6 +17,6 @@ numeros = 5, 87, 564, 5.12, 54, 63, 5.22
 print(soma_valores(*numeros))  # Utiliza-se o '*' antes de numeros para o python desenpacotar a tupla e poder
 # fazer operações com os valores dentro dela
 
-print(soma_valores(numeros))  # Caso não utilize o '*', será retornado TypeError pois o Python só reconhece
+# print(soma_valores(numeros))  # Caso não utilize o '*', será retornado TypeError pois o Python só reconhece
 # 'numeros' como uma coleção e não como elementos distintos.
 
